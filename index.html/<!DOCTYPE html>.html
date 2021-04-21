@@ -1,76 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name-'author' content='musugrupe'>
-
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta name='author' content='Musu grupe'>
 
         <title>Pagrindinis GitHub Pull</title>
 
         <style>
-
-            .clearfix{
-                overfow: auto;
+            .clearfix {
+                overflow:auto;
             }
+           #main-heading {
+               color:gray;
+           }
 
-            #main-heading {
-                color:gray;
-            }
+           #u-paragraph {
+               color:red;
+           }
 
-            #u-paragraph {
-                color:red;
-            }
+           .row {
+               background-color:aquamarine;
+               color:gray;
+               width:100%;
+           }
 
-            .row {
-                background-color: aquamarine;
-                width:100%;
-                color:gray;
-            }
-
-            .col{
-                float:left;
-                width:50%;
-            }
-
-            .pirma{
-                background-color: gray;
-            }
-
-            .antra{
-                background-color:purple;
-            }
+           .col {
+               float:left;
+               width:50%;
+           }
+           .pirma {
+               background-color: blue;
+           }
+           .antra {
+               background-color: rgb(135, 245, 24);
+           }
 
         </style>
 
     </head>
+        <body>
 
-    <body>
+            <h1 id='mainheading'>Minimali struktura</h1>
 
-        <h1 id='main heading'>Minimali struktura</h1>
+            <p id='u-paragraph'>Unikalus paragafas</p>
 
-        <p id='u-paragraph'>Unikalus paragrafas</p>
+<!-- eilute su stulpeliais -->
 
-        <div id='isskirtinis-elementas'>
+            <div class='row clearfix'>
+                <div class='col pirma'>
+                    <p>stulpelis</p><br>
+                    <p>stulpelis</p><br>
+                    <p>stulpelis</p><br>
+                    <p>stulpelis</p><br>
+                    <p>stulpelis</p>
+                </div>
+                <div class='col antra'>
+                    <p>stulpelis</p>
+                </div>
+            </div>    
 
-            <!--eilute su stulpeliais--?
-            <p>sukureme div</p>
-        </div>
-
-        <div class='row'>
-            <div class='col'>
-                <p>stulpelis</p>
-            </div>
-
-            <p>sukureme div zyma</p>
-        </div>
-
-        <div class='row clearfix'>
-            <div class='col'>
-                <p>stulpelis</p>
-            <p>susikureme div elementa</p>
-        </div>
         <br>
         <br>
         <br>
