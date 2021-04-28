@@ -4,7 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "../about.html"
+			"path": "../.."
+		},
+		{
+			"path": "../../04-demo/index.html"
 		}
 	],
 	"settings": {}

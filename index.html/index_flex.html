@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Index Flex</title>
+
+    <style>
+        body {
+            max-width: 1920px;
+            text-align: center;
+        }
+        .flex-container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        h1 {
+          font-size: 48px;
+          color: yellow;
+        }
+
+        p {
+          font-size: 12px;
+          color: darkgray;
+        }
+        img {
+          width: 200px;
+          height: 100px;
+        }
+        #main-heading {
+          color:grey;
+        }
+        ul {
+          list-style: none;
+        }
+        .flex-item-1 {
+            width: 100%;
+        }
+        .flex-item-2, .flex-item-3 {
+            width: 50%;
+        }
+        .flex-item-2 {
+            background-color: gray;
+        }
+        .flex-item-3 {
+            background-color: rgb(0, 255, 21);
+        }
+        .flex-item-4 {
+            width: 70%;
+        }
+        .flex-item-5 {
+            width:30%;
+        }
+        .flex-item-6 {
+            width: 33.33%;
+        }
+        .flex-item-7 {
+            width: 33.33%;
+        }
+        .flex-item-8 {
+            width: 33.33%;
+        }
+        
+        [class*="flex-container"] {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        @media all and(max-width: 720px) {
+            .flex-container {
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            [class*="flex-item"] {
+             width: 100%;
+            }
+            .flex-item-7 {
+                order:1;
+            }
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+        <div class='flex-container'>
+
+            <div class='flex-item-1'>
+                <h1 id='main-heading'>Minimali struktura</h1>
+            </div>
+            <div class='flex-item-2'>
+                <p>Stulpelis</p><br>
+                <p>Stulpelis</p><br>
+                <p>Stulpelis</p><br>
+                <p>Stulpelis</p><br>
+                <p>Stulpelis</p>     
+            </div>
+            <div class='flex-item-3'>
+                <p>Stulpelis</p>
+            </div>
+            <div class='flex-item-4'>
+                <h1>This is a Heading</h1>
+                <h2>This is a Heading</h2>
+                <h2>This is a Heading</h2>
+                <h3>This is a Heading</h3>
+                <h4>This is a Heading</h4>
+                <h5>This is a Heading</h5>
+                <h6>This is a Heading</h6>
+            </div>
+            <div class='flex-item-5'>
+                <p> tekstas su zyme p</p>
+                <span>Tekstas su zyma span</span>
+                <p>Vivamus magna justo, lacinia eget consectetur sed, 
+                convallis at tellus. <br> Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
+                Nulla quis lorem ut libero malesuada feugiat. 
+                Nulla quis lorem ut libero malesuada feugiat. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et 
+                ultrices posuere cubilia Curae; Donec velit neque, 
+                auctor sit amet aliquam vel, ullamcorper sit amet ligula. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+                Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            </div>
+            <div class='flex-item-6'>
+                <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2014%2F09%2Fgoogle-logo-1.png&f=1&nofb=1' alt='Pirmas paveiksliukas'><br>
+                <img src='img/pirmas_paveiksliukas.jpg' alt='Antras paveiksliukas'><br>
+                <img src='img/trecias_paveikslelis.jpg' alt='trecias paveiksleis'><br>
+            </div>
+            <div class='flex-item-7'>
+                <h1>Antra paskaita</h1>
+                <a href='https://google.lt' target='_blank'>Einame i Google Naujas Tab'as</a><br>
+                <a href='https://google.lt'>Einame i Google Be Naujo Tab'o</a><br>
+                <a href='about.html'>Einame i vidini about.html puslapi be naujo tabo</a><br>
+                <a href='about.html' target='_blank'>Einame i vidini about.html puslapi su nauju tab</a><br>  
+            </div>
+            <div class='flex-item-8'>
+                <ol>
+                    <li><a href='https://google.lt' target='_blank'>Einame i Google Naujas Tab'as</a></li><br>
+                    <li>Cukrus</li><br>
+                    <li>Limonadas</li><br>
+                    <li>Svoguno</li><br>
+                  </ol>
+                  <ul>
+                   <li>Druska</li><br>
+                   <li>Cukrus</li><br>
+                   <li>
+                       <a href='about.html' target='_blank'>Einame i vidini about.html puslapi su nauju tab</a>
+                   </li><br>
+                   <li>Svoguno</li><br>   
+                  </ul>
+            </div>
+
+        </div>
+</body>
+</html>
