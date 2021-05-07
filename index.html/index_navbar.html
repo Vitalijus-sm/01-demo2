@@ -19,7 +19,7 @@
     body {
         max-width: 1920px;
         margin: 0 auto;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Arial, sans-serif;
         line-height: 20px;
         color: #333;
         background-color: #f5f5f5;
@@ -34,7 +34,7 @@
     }
     .area {
         display: flex;
-        flex-flow: row-wrap;
+        flex-flow: row wrap;
         align-items: stretch;
         margin-left: auto;
         margin-right: auto;
@@ -51,9 +51,13 @@
         display: block;
         font-size: 1rem;
         color: #777;
-        margin: 22px
+        margin: 22px;
+    }
+    .navbar > .list {
+        display: flex;
     }
     .navbar > .list > .item {
+        display: block;
         height: 64px;
         line-height: 64px;
         margin-left: 22px;
@@ -62,16 +66,22 @@
         color: #555;
         font-size: 0.875rem;
     }
-    .navbar > .list > .item. -link {
+    .navbar > .list > .item.-link {
         line-height: 68px;
         color: #555;
         border-bottom: 4px solid transparent;
+        padding-bottom: 22px;
     }  
-    .navbar > .list > .item. -link:hover {
+    .navbar > .list > .item.-link:hover {
         color: #333;
         border-bottom-color: #673ab7;
     }  
-    .navbar > .toggle > .icon {
+
+
+    .navbar > .toggle > .icon,
+    .navbar > .toggle > .icon:before,
+    .navbar > .toggle > .icon:after 
+    {
         display: block;
         width: 24px;
         height: 3px;
@@ -79,19 +89,57 @@
     }
     .navbar > .toggle > .icon:before
     .navbar > .toggle > .icon:after  {
-        position: absolute
+        position: absolute;
         content:"";
     }
+    .navbar > .toggle > .icon:before {
+        top: -8px;
+    }
     .navbar > .toggle > .icon:after {
-        top: 22px;
+        bottom: 8px;
+    }
+    .navbar > .toggle > .icon {
+        position: relative;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .navbar > .toggle {
+        display:none;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 22px;
     }
 
-
-
+    @media all and (max-width: 786px) {
+        .area {
+            flex-direction: column;
+        }
+        .navbar > .list {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .navbar > .list > .item {
+            width: 100%;
+        }
+        .navbar > .toggle {
+            display: block;
+        }
+    }
+     
+    .kvadratelis {
+        display: none;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    .kvadratelis.aktyvus {
+        display: block;
+    }
 
 </style>
-
 </head>
+
 <body>
     <div class='container'>
         <div class='navbar-component'>
@@ -99,21 +147,69 @@
                 <a href='#' class='brand'>Imone</a>
 
                 <nav id='navigation' class='list'>
-                    <a href='#' class='item -list'>Pagrindinis</a>
-                    <a href='#' class='item -list'>Straipsniai</a>
-                    <a href='#' class='item -list'>Projektai</a>
-                    <a href='#' class='item -list'>Resursai</a>
-                    <a href='#' class='item -list'>Apie mus</a>
+                    <a href='#' class='item -link'>Pagrindinis</a>
+                    <a href='#' class='item -link'>Straipsniai</a>
+                    <a href='#' class='item -link'>Projektai</a>
+                    <a href='#' class='item -link'>Resursai</a>
+                    <a href='#' class='item -link'>Apie mane</a>
                     <span class='item'>
                         <i class='fa fa-search'></i> <!-- fontawesome classes-->
                     </span>
                 </nav>
-                <button class='toggle'>
+                <button id='hamburger' class='toggle'>
                     <span class='icon'></span>
                 </button>
             </div>
         </div>
+        <div class='main'>
+            <span class='dinaminis'>Tekstas</span>
+            <span class='dinaminis1'>4</span>
+            <button onclick='on()' class='on'>Įjungti</button>
+            <button onclick='off()' class='off'>Išjungti</button>
+
+            <div class='kvadratelis aktyvus apskritimas'></div>
+        </div>
     </div>
+
+
+    <script>
+        function on() {
+            document.querySelector('.kvadratelis').classList.add('aktyvus');
+            console.log('Įjungta');
+        }
+        function off() {
+            console.log('Išjungta');
+            // console.log(document.querySelector('.kvadratelis').classList);
+            document.querySelector('.kvadratelis').classList.remove('aktyvus');
+        }
+
+        var suma, sk1, sk2;
+        suma = 0;
+        sk1 = 8;
+        sk2 = 10;
+
+        suma = sk1 + sk2;
+
+        console.log(suma);
+        console.log('tekstas irasytas ranka');
+        console.log(document.querySelector('.dinaminis').innerText);
+        console.log(document.querySelector('.dinaminis1').innerText);
+
+        sk1 = document.querySelector('.dinaminis1').innerText; //4
+        sk2 = 5;
+
+        var skirtumas;
+
+        skirtumas = sk2 - sk1;
+
+
+        console.log('Skaicius is dizaino ' + sk1)
+
+        console.log(skirtumas)
+
+        document.querySelector('.dinaminis').innerText = skirtumas;
+    </script>
+
     
 </body>
 </html>
