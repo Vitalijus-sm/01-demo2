@@ -86,8 +86,9 @@
         width: 24px;
         height: 3px;
         background-color: #555555;
+        transition: background-color 0.3s linear, transform 0.3s linear;
     }
-    .navbar > .toggle > .icon:before
+    .navbar > .toggle > .icon:before,
     .navbar > .toggle > .icon:after  {
         position: absolute;
         content:"";
@@ -96,7 +97,7 @@
         top: -8px;
     }
     .navbar > .toggle > .icon:after {
-        bottom: 8px;
+        top: 8px;
     }
     .navbar > .toggle > .icon {
         position: relative;
@@ -104,25 +105,42 @@
         margin-bottom: 8px;
     }
     .navbar > .toggle {
-        display:none;
+        display: none;
         border: 0;
         background-color: transparent;
         cursor: pointer;
         padding: 22px;
     }
+    .navbar > .toggle.active > .icon {
+        background-color: transparent;
+    }
+    .navbar > .toggle.active > .icon:before {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar > .toggle.active > .icon:after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
     @media all and (max-width: 786px) {
+
         .area {
             flex-direction: column;
         }
         .navbar > .list {
+            display: none;
             flex-direction: column;
             flex-wrap: wrap;
+        }
+
+        .navbar >.list.active {
+            display: flex;
         }
         .navbar > .list > .item {
             width: 100%;
         }
         .navbar > .toggle {
+            position: absolute;
+            right: 0;
             display: block;
         }
     }
@@ -166,6 +184,7 @@
             <span class='dinaminis1'>4</span>
             <button onclick='on()' class='on'>Įjungti</button>
             <button onclick='off()' class='off'>Išjungti</button>
+            <button class='onoff'>Ijungti/Isjungti</button>
 
             <div class='kvadratelis aktyvus apskritimas'></div>
         </div>
@@ -173,6 +192,17 @@
 
 
     <script>
+
+        document.querySelector('.onoff').onclick = function() {
+            document.querySelector('.kvadratelis').classList.toggle('aktyvus');
+        }
+
+          //Hamburger (toggle) funkcia
+        document.querySelector('.toggle').onclick = function() {
+            this.classList.toggle('active');
+            document.querySelector('.list').classList.toggle('active');
+        }
+
         function on() {
             document.querySelector('.kvadratelis').classList.add('aktyvus');
             console.log('Įjungta');
@@ -208,6 +238,7 @@
         console.log(skirtumas)
 
         document.querySelector('.dinaminis').innerText = skirtumas;
+
     </script>
 
     
